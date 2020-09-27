@@ -23,14 +23,22 @@ $(document).ready(function() {
     var email = $("#email").val();
     var password = $("#myInput").val();
     var cpassword = $("#myInput1").val();
-    if (firstname == '' ||lastname == '' ||username == '' || email == '' || password == '' || cpassword == '') {
-    alert("Please fill all fields...!!!!!!");
-    } else if ((password.length) < 8) {
-    alert("Password should atleast 8 character in length...!!!!!!");
-    } else if (!(password).match(cpassword)) {
-    alert("Your passwords don't match. Try again?");
-    } else {
-    alert("You have Successfully Registered!" + "\n" + firstname  + "\n" + lastname + "\n" + username + "\n" + email)
-    }
+        
+        if (firstname == '' ||lastname == '' ||username == '' || email == '' || password == '' || cpassword == '') {
+                 alert("Please fill all fields...!!!!!!");
+                 return false;
+        } 
+        else if ((password.length) < 8) {
+                alert("Password should atleast 8 character in length...!!!!!!");
+                return false;
+        } 
+        else if (!(password).match(cpassword)) {
+                 alert("Your passwords don't match. Try again?");
+                 return false;
+        } 
+        else {
+                 alert("You have Successfully Registered!" + "\n" + firstname  + "\n" + lastname + "\n" + username + "\n" + email);
+                 return true;
+        }
     });
     });
